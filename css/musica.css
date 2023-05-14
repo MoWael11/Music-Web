@@ -1,0 +1,70 @@
+:root {
+    --main-color: white;
+    --main-color-hover: #8f96ff;
+}
+.section {
+    background-image: url(../media/background-music.png);
+    min-height: 100vh;
+}
+.content-second .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.content-second .container .text h1 {
+    font-weight: normal;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin: 15px 0 20px;
+}
+@media (max-width:768px) {
+    .content-second .container .text h1 {
+        font-size: 26px;
+    }
+    .content-second .container .text p {
+        text-align: center;
+    }
+    .content-second .container .text h1 {
+        text-align: center;
+    }
+}
+.content-second .container .text p:not(:last-of-type) {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.content-second .container .text ul {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-top: 20px;
+}
+
+.content-second .container .text ul a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: 0.3s;
+    display: block;
+    padding: 0 0 15px;
+}
+.content-second .container .text ul a::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\F101";
+    font-weight: 800;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+.content-second .container .text ul a:hover,
+.content-second .container .text ul a:hover::before {
+    padding-left: 10px;
+    color: var(--main-color-hover);
+}
+.content-second .container .music-image,
+.content-second .container .music-imagee {
+    order: -1;
+    width: 100%;
+}
+.content-second .container .music-image img {
+    width: 100%;
+}

@@ -1,0 +1,299 @@
+:root {
+    --main-color: white;
+    --main-color-hover: rgb(141, 141, 141);
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+body::-webkit-scrollbar {
+    width: 10px;      
+}
+body::-webkit-scrollbar-track {
+    background: black; 
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 6px; 
+    background-color: var(--main-color);    
+}
+ul {
+    list-style: none;
+}
+hr {  
+    display: inline-block
+}
+a {
+    text-transform: capitalize;
+}
+.padding {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.section {
+    background-image: url(../media/background-index.png);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+.section::before {
+    content: "";
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.649);
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 960px;
+    }
+}
+@media (min-width: 1199px) {
+    .container {
+        width: 1170px;
+    }
+}
+.header {
+    background-color: #0000009d;
+}
+.header .container {
+    position: relative;
+    min-height: 97px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.header .container > span {
+    cursor: pointer;
+    color: var(--main-color);
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 10px;
+}
+.header .container > span::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    left: -18px;
+}
+@media (max-width:768px) {
+    .header .container > span::before {
+        width: 0;
+    }
+}
+.header .container::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: white;
+    bottom: 0;
+    width: calc(100% - 30px);
+}
+.header .container .nav {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+@media (min-width:768px) {
+    .header .container .nav > i:first-child {
+        display: none;
+    }
+}
+@media (max-width:768px) {
+    .header .container .nav i:first-child {
+        display: block;
+    }
+}
+.header .container .nav i:first-of-type {
+    color: white;
+    font-size: 25px;
+}
+.header .container .nav ul {
+    display: flex;
+}
+@media (max-width:768px) {
+    .header .container .nav ul {
+        display: none;
+    }
+    .header .container .nav i:first-of-type:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        padding: 15px;
+        background-color: rgb(0 0 0 / 72%);
+        z-index: 1;
+    }
+    .header .container {
+        overflow:visible;
+    }
+}
+.header .container .nav ul li a{
+    padding: 40px 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+.header .container .nav ul li a.active,
+.header .container .nav ul li a:hover {
+    color: var(--main-color-hover);
+    border-bottom: var(--main-color-hover) 1px solid;
+}
+.header .container .nav .search {
+    width: 40px;
+    height: 30px;
+    border-left: 1px white solid;
+    margin-left: 10px;
+    position: relative;
+    margin-left: 40px;
+}
+.header .container .nav .search i {
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    color: white;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.content h2 {
+    font-weight: normal;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 60px;
+}
+.content h2::before {  
+    content: "";
+    position: absolute;
+    width: 120px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+}
+.content h2::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: black 2px solid;
+    background-color: white;
+    border-radius: 50%;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.content .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+}
+.content .container .box {
+    background-color: #25252594;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    align-items: center;
+    transition: 0.3s;
+}
+@media (min-width:1200px) {
+    .content .container .box:last-child {
+        position: relative;
+        left: -25px;
+        width: 400px;
+        grid-area: 2 / 2 / 3 / 3;
+    }
+}
+.content .container .box:hover {
+    box-shadow: 0px 0px 5px white;
+}
+.content .container .box > a:first-of-type {
+    font-weight: normal;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: var(--main-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.content .container .box > a:first-of-type:hover {
+    color: var(--main-color-hover);
+}
+.content .container .box .image {
+    min-height: 215px;
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.content .container .box .image img {
+    min-width: 190px;
+}
+.content .container .box a:not(:first-of-type),
+.content .container .box li a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    padding: 10px 30px 10px 20px;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.3s;
+}
+.content .container .box a:not(:first-of-type):hover,
+.content .container .box li a:hover {
+    background-color: var(--main-color-hover);
+}
+.content .container .box ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.content .container .box a:not(:nth-child(1))::before,
+.content .container .box ul li a::before{
+    position: absolute;
+    right: 8px;
+    font-family: "Font Awesome 5 Free";
+    content: "\f019";
+    font-weight: bold;
+    color: black;
+}
